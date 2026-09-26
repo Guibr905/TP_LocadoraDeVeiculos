@@ -1,0 +1,34 @@
+# Build
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# Rider
+.idea/
+
+# NuGet
+*.nupkg
+packages/
+
+# Logs
+*.log
+logs/
+
+# Sistema
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Arquivos locais
+appsettings.Local.json
+*.local.json
