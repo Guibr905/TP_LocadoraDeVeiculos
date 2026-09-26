@@ -300,6 +300,6 @@ INNER JOIN Veiculos v ON a.VeiculoId = v.Id;
 
 ## Repositório
 
-- **GitHub:** https://github.com/[SEU-USUARIO]/[NOME-REPO]
+- **GitHub:** (https://github.com/Guibr905/TP_LocadoraDeVeiculos.git)
 
 ---
