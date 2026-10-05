@@ -169,7 +169,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
   "anoFabricacao": 2022,
   "quilometragem": 15000,
   "placa": "ABC1234",
-  "fabricanteId": 1,
+  "fabricanteId": 4,
   "categoriaId": 1
 }
 ```
@@ -186,7 +186,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
   "anoFabricacao": 2022,
   "quilometragem": 15000,
   "placa": "ABC1234",
-  "fabricanteId": 1,
+  "fabricanteId": 4,
   "categoriaId": 1,
   "alugueis": []
 }
