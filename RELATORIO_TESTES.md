@@ -16,7 +16,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 **Comando:** `dotnet run`  
 **Resultado esperado:** API sobe em `http://localhost:5000`  
 **Evidência:**  
-![Terminal](./docs/testes/01-terminal.png)
+![Terminal](./Images/1.png)
 
 ---
 
@@ -25,8 +25,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 **URL:** `http://localhost:5000/swagger`  
 **Resultado:** Swagger UI com todos os controllers listados.  
 **Evidência:**  
-![Pagina Swagger](./docs/testes/02-pagina-swagger.png)
-
+![Pagina Swagger](./Images/2.png)
 ---
 
 ## 3. Criar Fabricante (POST)
@@ -42,7 +41,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 { "id": 4, "nome": "Toyota", "paisOrigem": "Japão", "anoFundacao": 1937, "veiculos": [] }
 ```
 **Evidência:**  
-![POST Fabricante](./docs/testes/03-post-fabricante.png)
+![POST Fabricante](./Images/postfab.png)
 
 ---
 
@@ -51,7 +50,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 **Endpoint:** `GET /api/fabricantes`  
 **Resultado obtido:** `200 OK` com lista de fabricantes.  
 **Evidência:**  
-![GET Fabricantes](./docs/testes/04-get-fabricantes.png)
+![GET Fabricantes](./Images/getfabr.png)
 
 ---
 
@@ -70,7 +69,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![GET Fabricante por ID](./docs/testes/06-get-fabricante-id.png)
+![GET Fabricante por ID](./Images/getidfabr.png)
 
 ---
 
@@ -89,7 +88,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![PUT Fabricante](./docs/testes/07-put-fabricante.png)
+![PUT Fabricante](./Images/putfabr.png)
 
 ---
 
@@ -119,7 +118,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![POST Categoria](./docs/testes/08-post-categoria.png)
+![POST Categoria](./Images/categpost.png)
 
 ---
 
@@ -140,7 +139,9 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![POST Categorias adicionais](./docs/testes/09-post-categorias-extra.png)
+![POST Categorias adicionais](./Images/categpost2.png)
+
+![POST Categorias adicionais 2](./Images/categpost3.png)
 
 ---
 
@@ -154,7 +155,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![GET Categorias](./docs/testes/10-get-categorias.png)
+![GET Categorias](./Images/categget.png)
 
 ---
 
@@ -194,7 +195,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![POST Veículo](./docs/testes/11-post-veiculo.png)
+![POST Veículo](./Images/veiculopost.png)
 
 ---
 
@@ -229,7 +230,8 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![POST Veículos adicionais](./docs/testes/12-post-veiculos-extra.png)
+![POST Veículos adicionais](./Images/veiculopost2.png)
+![POST Veículos adicionais 2](./Images/veiculopost3.png)
 
 ---
 
@@ -243,7 +245,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![GET Veículos](./docs/testes/13-get-veiculos.png)
+![GET Veículos](./Images/veiculoget.png)
 
 ---
 
@@ -280,7 +282,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![POST Cliente](./docs/testes/14-post-cliente.png)
+![POST Cliente](./Images/clientePost.png)
 
 ---
 
@@ -302,7 +304,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![POST Cliente Maria](./docs/testes/15-post-cliente-maria.png)
+![POST Cliente Maria](./Images/clientePost2.png)
 
 ---
 
@@ -343,7 +345,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![POST Aluguel](./docs/testes/16-post-aluguel.png)
+![POST Aluguel](./Images/aluguelPOST.png)
 
 ---
 
@@ -373,7 +375,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![POST Aluguel Conflito](./docs/testes/17-post-aluguel-conflito.png)
+![POST Aluguel Conflito](./Images/aluguelCONFLIT.png)
 
 ---
 
@@ -403,7 +405,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![PATCH Devolução](./docs/testes/18-patch-devolucao.png)
+![PATCH Devolução](./Images/aluguelPATCH.png)
 
 ---
 
@@ -431,7 +433,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![Filtro 1 — Veículos por Fabricante](./docs/testes/19-filtro-veiculos-fabricante.png)
+![Filtro 1 — Veículos por Fabricante](./Images/veicPfab.png)
 
 ---
 
@@ -461,7 +463,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![Filtro 2 — Aluguéis por Cliente](./docs/testes/20-filtro-alugueis-cliente.png)
+![Filtro 2 — Aluguéis por Cliente](./Images/cpfFiltro.png)
 
 ---
 
@@ -485,7 +487,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![Filtro 3 — Fabricantes com Veículos](./docs/testes/21-filtro-fabricantes-veiculos.png)
+![Filtro 3 — Fabricantes com Veículos](./Images/fabComVeiculo.png)
 
 ---
 
@@ -519,7 +521,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![Filtro 4 — Clientes com Total](./docs/testes/22-filtro-clientes-total.png)
+![Filtro 4 — Clientes com Total](./Images/PessoasComAluguel.png)
 
 ---
 
@@ -547,7 +549,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![Filtro 5 — Aluguéis por Categoria](./docs/testes/23-filtro-alugueis-categoria.png)
+![Filtro 5 — Aluguéis por Categoria](./Images/aluguelCONFLIT.png)
 
 ---
 
@@ -690,7 +692,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![DELETE Fabricante](./docs/testes/33-delete-fabricante.png)
+![DELETE Fabricante](./Images/deleteFab.png)
 
 ## ✅ Conclusão dos testes
 
