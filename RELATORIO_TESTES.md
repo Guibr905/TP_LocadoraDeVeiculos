@@ -55,7 +55,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 6. Buscar Fabricante por ID — GET /api/fabricantes/1
+## 6. Buscar Fabricante por ID — GET /api/fabricantes/4
 
 **Endpoint:** `GET /api/fabricantes/4`
 
@@ -68,28 +68,24 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 { "id": 4, "nome": "Toyota", "paisOrigem": "Japão", "anoFundacao": 1937, "veiculos": [] }
 ```
 
-✅ **Aprovado**
-
 **Evidência:**
 
 ![GET Fabricante por ID](./docs/testes/06-get-fabricante-id.png)
 
 ---
 
-## 7. Atualizar Fabricante — PUT /api/fabricantes/1
+## 7. Atualizar Fabricante — PUT /api/fabricantes/4
 
-**Endpoint:** `PUT /api/fabricantes/1`
+**Endpoint:** `PUT /api/fabricantes/4`
 
 **Corpo enviado:**
 ```json
-{ "id": 1, "nome": "Toyota Motors", "paisOrigem": "Japão", "anoFundacao": 1937, "veiculos": [] }
+{ "id": 4, "nome": "Toyota Motors", "paisOrigem": "Japão", "anoFundacao": 1937, "veiculos": [] }
 ```
 
 **Resultado esperado:** `204 No Content`.
 
 **Resultado obtido:** `204 No Content`.
-
-✅ **Aprovado**
 
 **Evidência:**
 
