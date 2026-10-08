@@ -108,7 +108,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 **Resposta:**
 ```json
 {
-  "id": 1,
+  "id": 5,
   "nome": "Sedan",
   "descricao": "Sedans médios",
   "valorDiariaBase": 140.00,
@@ -135,7 +135,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 { "nome": "SUV", "descricao": "Utilitários esportivos", "valorDiariaBase": 200.00 }
 ```
 
-**Resultado obtido:** `201 Created` para ambos (ids 2 e 3).
+**Resultado obtido:** `201 Created` para ambos (ids 6 e 7).
 
 **Evidência:**
 
@@ -210,7 +210,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
   "anoFabricacao": 2021,
   "quilometragem": 30000,
   "placa": "DEF5678",
-  "fabricanteId": 2,
+  "fabricanteId": 5,
   "categoriaId": 6
 }
 ```
@@ -221,7 +221,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
   "anoFabricacao": 2023,
   "quilometragem": 8000,
   "placa": "GHI9012",
-  "fabricanteId": 3,
+  "fabricanteId": 6,
   "categoriaId": 6
 }
 ```
@@ -300,7 +300,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 }
 ```
 
-**Resultado obtido:** `201 Created` (id 2).
+**Resultado obtido:** `201 Created` (id 4).
 
 **Evidência:**
 
@@ -315,8 +315,8 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 **Corpo enviado:**
 ```json
 {
-  "clienteId": 1,
-  "veiculoId": 1,
+  "clienteId": 3,
+  "veiculoId": 5,
   "dataRetirada": "2026-09-26T10:00:00",
   "dataDevolucaoPrevista": "2026-09-30T10:00:00",
   "valorDiaria": 140.00
@@ -330,9 +330,9 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 **Resposta:**
 ```json
 {
-  "id": 1,
-  "clienteId": 1,
-  "veiculoId": 1,
+  "id": 3,
+  "clienteId": 3,
+  "veiculoId": 5,
   "dataRetirada": "2026-09-26T10:00:00",
   "dataDevolucaoPrevista": "2026-09-30T10:00:00",
   "dataDevolucaoReal": null,
@@ -356,8 +356,8 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 **Corpo enviado** (mesmo veículo, período sobreposto):
 ```json
 {
-  "clienteId": 2,
-  "veiculoId": 1,
+  "clienteId": 4,
+  "veiculoId": 5,
   "dataRetirada": "2026-09-27T10:00:00",
   "dataDevolucaoPrevista": "2026-10-01T10:00:00",
   "valorDiaria": 140.00
@@ -390,9 +390,9 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 **Resposta:**
 ```json
 {
-  "id": 1,
-  "clienteId": 1,
-  "veiculoId": 1,
+  "id": 3,
+  "clienteId": 3,
+  "veiculoId": 5,
   "dataRetirada": "2026-09-26T10:00:00",
   "dataDevolucaoPrevista": "2026-09-30T10:00:00",
   "dataDevolucaoReal": "2026-09-26T20:42:00",
@@ -421,7 +421,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 ```json
 [
   {
-    "id": 1,
+    "id": 5,
     "modelo": "Corolla",
     "anoFabricacao": 2022,
     "placa": "ABC1234",
@@ -449,7 +449,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 ```json
 [
   {
-    "id": 1,
+    "id": 3,
     "cliente": "João Silva",
     "veiculo": "Corolla",
     "placa": "ABC1234",
@@ -481,7 +481,6 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
   { "fabricante": "Toyota Motors", "veiculo": "Corolla" },
   { "fabricante": "Volkswagen", "veiculo": "Gol" },
   { "fabricante": "Chevrolet", "veiculo": "Onix" },
-  { "fabricante": "Fiat", "veiculo": "(sem veículos)" }
 ]
 ```
 
@@ -503,14 +502,14 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 ```json
 [
   {
-    "id": 1,
+    "id": 3,
     "nome": "João Silva",
     "cpf": "12345678900",
     "totalAlugueis": 1,
     "valorTotalGasto": 140.00
   },
   {
-    "id": 2,
+    "id": 4,
     "nome": "Maria Souza",
     "cpf": "98765432100",
     "totalAlugueis": 0,
@@ -553,7 +552,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 24. Teste de Erro 404 — GET /api/fabricantes/9999
+## 24. Teste de Erro 404 — GET /api/fabricantes/999
 
 **Endpoint:** `GET /api/fabricantes/9999`
 
@@ -568,7 +567,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![Erro 404](./docs/testes/24-erro-404.png)
+![Erro 404](./Images/FabNaoEncontrado.png)
 
 ---
 
@@ -599,7 +598,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![Erro 400](./docs/testes/25-erro-400.png)
+![Erro 400](./Images/FabDadosInvalidos.png)
 
 ---
 
@@ -618,13 +617,13 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![Erro 409](./docs/testes/26-erro-409.png)
+![Erro 409](./Images/DeleteCategComVeiculo.png)
 
 ---
 
-## 27. Deletar Fabricante sem vínculos — DELETE /api/fabricantes/3
+## 27. Deletar Fabricante sem vínculos — DELETE /api/fabricantes/5
 
-**Endpoint:** `DELETE /api/fabricantes/3`
+**Endpoint:** `DELETE /api/fabricantes/5`
 
 **Resultado esperado:** `204 No Content`.
 
@@ -632,61 +631,61 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 **Evidência:**
 
-![DELETE Fabricante](./docs/testes/27-delete-fabricante.png)
+![DELETE Fabricante](./Images/deleteFab.png)
 
 ---
 
-## 28. DELETE Aluguel — DELETE /api/alugueis/2
+## 28. DELETE Aluguel — DELETE /api/alugueis/3
 
-**Endpoint:** `DELETE /api/alugueis/2`  
+**Endpoint:** `DELETE /api/alugueis/3`  
 **Resultado esperado:** `204 No Content`  
 **Resultado obtido:** `204 No Content`
 
 **Evidência:**
 
-![DELETE Aluguel](./docs/testes/29-delete-aluguel.png)
+![DELETE Aluguel](./Images/deleteAluguel.png)
 
 ---
 
-## 29. DELETE Veículo — DELETE /api/veiculos/4
+## 29. DELETE Veículo — DELETE /api/veiculos/7
 
-**Endpoint:** `DELETE /api/veiculos/4`  
+**Endpoint:** `DELETE /api/veiculos/7`  
 **Resultado esperado:** `204 No Content`  
 **Resultado obtido:** `204 No Content`
 
 **Evidência:**
 
-![DELETE Veículo](./docs/testes/30-delete-veiculo.png)
+![DELETE Veículo](./Images/deleteveiculo.png)
 
 ---
 
-## 30. DELETE Cliente — DELETE /api/clientes/3
+## 30. DELETE Cliente — DELETE /api/clientes/4
 
-**Endpoint:** `DELETE /api/clientes/3`  
+**Endpoint:** `DELETE /api/clientes/4`  
 **Resultado esperado:** `204 No Content`  
 **Resultado obtido:** `204 No Content`
 
 **Evidência:**
 
-![DELETE Cliente](./docs/testes/31-delete-cliente.png)
+![DELETE Cliente](./Images/deleteCliente.png)
 
 ---
 
-## 31. DELETE Categoria — DELETE /api/categorias/4
+## 31. DELETE Categoria — DELETE /api/categorias/7
 
-**Endpoint:** `DELETE /api/categorias/4`  
+**Endpoint:** `DELETE /api/categorias/7`  
 **Resultado esperado:** `204 No Content`  
 **Resultado obtido:** `204 No Content`
 
 **Evidência:**
 
-![DELETE Categoria](./docs/testes/32-delete-categoria.png)
+![DELETE Categoria](./Images/deleteCateg.png)
 
 ---
 
-## 32. DELETE Fabricante — DELETE /api/fabricantes/4
+## 32. DELETE Fabricante — DELETE /api/fabricantes/5
 
-**Endpoint:** `DELETE /api/fabricantes/4`  
+**Endpoint:** `DELETE /api/fabricantes/5`  
 **Resultado esperado:** `204 No Content`  
 **Resultado obtido:** `204 No Content`
 
@@ -694,7 +693,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ![DELETE Fabricante](./Images/deleteFab.png)
 
-## ✅ Conclusão dos testes
+## Conclusão dos testes
 
 Todos os endpoints testados responderam conforme esperado.
 
@@ -712,7 +711,7 @@ Todos os endpoints testados responderam conforme esperado.
 
 ---
 
-## ✅ Conclusão dos testes
+## Conclusão dos testes
 
 Todos os endpoints testados responderam conforme esperado:
 
