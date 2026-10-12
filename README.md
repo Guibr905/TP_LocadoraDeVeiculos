@@ -14,6 +14,12 @@ Trabalho referente à disciplina de **Tecnologias para Análise e Desenvolviment
 
 ---
 
+## 🎥 Vídeo de Apresentação
+
+[![Assista ao vídeo de apresentação](https://i9.ytimg.com/vi/vJKe6r89Mvw/mqdefault.jpg?sqp=CNiVsdYG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYACsAWKAgwIABABGGYgZihmMA8=&rs=AOn4CLBYVzEnrrZEhgmOE3bf8ZQUZvID9Q)](https://youtu.be/vJKe6r89Mvw?si=nFDBXODSf8FObqT8))
+
+---
+
 ## Tecnologias utilizadas
 
 | Tecnologia | Versão |
