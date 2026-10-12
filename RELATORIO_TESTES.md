@@ -54,7 +54,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 6. Buscar Fabricante por ID — GET /api/fabricantes/4
+## 5. Buscar Fabricante por ID — GET /api/fabricantes/4
 
 **Endpoint:** `GET /api/fabricantes/4`
 
@@ -73,7 +73,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 7. Atualizar Fabricante — PUT /api/fabricantes/4
+## 6. Atualizar Fabricante — PUT /api/fabricantes/4
 
 **Endpoint:** `PUT /api/fabricantes/4`
 
@@ -92,7 +92,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 8. Criar Categoria — POST /api/categorias
+## 7. Criar Categoria — POST /api/categorias
 
 **Endpoint:** `POST /api/categorias`
 
@@ -122,7 +122,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 9. Criar Categorias adicionais — POST /api/categorias
+## 8. Criar Categorias adicionais — POST /api/categorias
 
 **Endpoint:** `POST /api/categorias`
 
@@ -145,7 +145,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 10. Listar Categorias — GET /api/categorias
+## 9. Listar Categorias — GET /api/categorias
 
 **Endpoint:** `GET /api/categorias`
 
@@ -159,7 +159,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 11. Criar Veículo — POST /api/veiculos
+## 10. Criar Veículo — POST /api/veiculos
 
 **Endpoint:** `POST /api/veiculos`
 
@@ -199,7 +199,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 12. Criar Veículos adicionais — POST /api/veiculos
+## 11. Criar Veículos adicionais — POST /api/veiculos
 
 **Endpoint:** `POST /api/veiculos`
 
@@ -249,7 +249,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 14. Criar Cliente — POST /api/clientes
+## 12. Criar Cliente — POST /api/clientes
 
 **Endpoint:** `POST /api/clientes`
 
@@ -286,7 +286,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 15. Criar Cliente adicional — POST /api/clientes
+## 13. Criar Cliente adicional — POST /api/clientes
 
 **Endpoint:** `POST /api/clientes`
 
@@ -308,7 +308,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 16. Criar Aluguel — POST /api/alugueis
+## 14. Criar Aluguel — POST /api/alugueis
 
 **Endpoint:** `POST /api/alugueis`
 
@@ -349,7 +349,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 17. Conflito de Aluguel — POST /api/alugueis
+## 15. Conflito de Aluguel — POST /api/alugueis
 
 **Endpoint:** `POST /api/alugueis`
 
@@ -379,7 +379,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 18. Devolver Veículo — PATCH /api/alugueis/1/devolver
+## 16. Devolver Veículo — PATCH /api/alugueis/1/devolver
 
 **Endpoint:** `PATCH /api/alugueis/1/devolver?quilometragemFinal=15500`
 
@@ -409,7 +409,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 19. Filtro 1 — INNER JOIN: veículos por fabricante
+## 17. Filtro 1 — INNER JOIN: veículos por fabricante
 
 **Endpoint:** `GET /api/filtros/veiculos-por-fabricante/Toyota`
 
@@ -437,7 +437,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 20. Filtro 2 — INNER JOIN triplo: aluguéis por CPF do cliente
+## 18. Filtro 2 — INNER JOIN triplo: aluguéis por CPF do cliente
 
 **Endpoint:** `GET /api/filtros/alugueis-por-cliente/12345678900`
 
@@ -467,7 +467,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 21. Filtro 3 — LEFT JOIN: fabricantes com veículos
+## 19. Filtro 3 — LEFT JOIN: fabricantes com veículos
 
 **Endpoint:** `GET /api/filtros/fabricantes-com-veiculos`
 
@@ -490,7 +490,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 22. Filtro 4 — LEFT JOIN + GROUP BY: clientes com total de aluguéis
+## 20. Filtro 4 — LEFT JOIN + GROUP BY: clientes com total de aluguéis
 
 **Endpoint:** `GET /api/filtros/clientes-com-total-alugueis`
 
@@ -524,7 +524,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 23. Filtro 5 — INNER JOIN triplo: aluguéis por categoria
+## 21. Filtro 5 — INNER JOIN triplo: aluguéis por categoria
 
 **Endpoint:** `GET /api/filtros/alugueis-por-categoria/1`
 
@@ -552,7 +552,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 24. Teste de Erro 404 — GET /api/fabricantes/999
+## 22. Teste de Erro 404 — GET /api/fabricantes/999
 
 **Endpoint:** `GET /api/fabricantes/9999`
 
@@ -571,7 +571,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 25. Teste de Erro 400 — POST /api/fabricantes com dados inválidos
+## 23. Teste de Erro 400 — POST /api/fabricantes com dados inválidos
 
 **Endpoint:** `POST /api/fabricantes`
 
@@ -602,7 +602,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 26. Teste de Erro 409 — DELETE categoria com veículos vinculados
+## 24. Teste de Erro 409 — DELETE categoria com veículos vinculados
 
 **Endpoint:** `DELETE /api/categorias/1`
 
@@ -621,7 +621,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 27. Deletar Fabricante sem vínculos — DELETE /api/fabricantes/5
+## 25. Deletar Fabricante sem vínculos — DELETE /api/fabricantes/5
 
 **Endpoint:** `DELETE /api/fabricantes/5`
 
@@ -635,7 +635,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 28. DELETE Aluguel — DELETE /api/alugueis/3
+## 26. DELETE Aluguel — DELETE /api/alugueis/3
 
 **Endpoint:** `DELETE /api/alugueis/3`  
 **Resultado esperado:** `204 No Content`  
@@ -647,7 +647,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 29. DELETE Veículo — DELETE /api/veiculos/7
+## 27. DELETE Veículo — DELETE /api/veiculos/7
 
 **Endpoint:** `DELETE /api/veiculos/7`  
 **Resultado esperado:** `204 No Content`  
@@ -659,7 +659,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 30. DELETE Cliente — DELETE /api/clientes/4
+## 28. DELETE Cliente — DELETE /api/clientes/4
 
 **Endpoint:** `DELETE /api/clientes/4`  
 **Resultado esperado:** `204 No Content`  
@@ -671,7 +671,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 31. DELETE Categoria — DELETE /api/categorias/7
+## 29. DELETE Categoria — DELETE /api/categorias/7
 
 **Endpoint:** `DELETE /api/categorias/7`  
 **Resultado esperado:** `204 No Content`  
@@ -683,7 +683,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 
 ---
 
-## 32. DELETE Fabricante — DELETE /api/fabricantes/5
+## 30. DELETE Fabricante — DELETE /api/fabricantes/5
 
 **Endpoint:** `DELETE /api/fabricantes/5`  
 **Resultado esperado:** `204 No Content`  
