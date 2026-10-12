@@ -182,7 +182,7 @@ Validar manualmente, via Swagger, todos os endpoints da API RESTful da locadora 
 **Resposta:**
 ```json
 {
-  "id": 1,
+  "id": 5,
   "modelo": "Corolla",
   "anoFabricacao": 2022,
   "quilometragem": 15000,
