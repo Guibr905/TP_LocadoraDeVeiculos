@@ -1,8 +1,227 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wireframes | Vértice</title><style>
-*{box-sizing:border-box}body{margin:0;background:#eceff3;color:#303846;font:14px Arial,sans-serif}.intro{padding:35px max(24px,calc((100% - 1100px)/2));background:#202a39;color:white}.intro h1{margin:0 0 8px;font-size:26px}.intro p{margin:0;color:#c2cbd7}.wrap{max-width:1100px;margin:30px auto;padding:0 20px}.wire{background:#fff;border:1px solid #cbd1d9;border-radius:8px;margin:22px 0;padding:20px;box-shadow:0 4px 14px #2732440c}.wire h2{font-size:17px;margin:0 0 5px}.wire>p{color:#7d8794;font-size:12px;margin:0 0 17px}.bar{height:27px;background:#e5e8ed;border:1px solid #d1d6de;border-radius:4px;margin-bottom:13px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.tile{height:70px;background:#f1f3f6;border:1px solid #d7dce3;border-radius:5px;padding:12px;color:#707b8b;font-size:11px}.tile b{display:block;color:#4e5968;font-size:18px;margin-top:7px}.columns{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-top:12px}.block{min-height:130px;border:1px solid #d4dae2;background:repeating-linear-gradient(0deg,#fff,#fff 28px,#f0f2f5 29px);border-radius:5px;padding:12px;color:#788392;font-size:11px}.filters{display:flex;gap:8px;margin:10px 0}.filters span{height:30px;flex:1;border:1px solid #cfd5de;background:#f8f9fa;border-radius:4px}.actions{height:35px;width:120px;background:#d9dde3;border-radius:4px;margin:12px 0 0 auto}.modal{max-width:540px;margin:15px auto;border:1px solid #cdd3dc;padding:18px;border-radius:6px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.fields span{height:36px;border:1px solid #d3d9e1;background:#f8f9fa;border-radius:4px}.caption{font-size:10px;color:#98a1ac;margin-top:8px}@media(max-width:650px){.grid{grid-template-columns:1fr 1fr}.columns{grid-template-columns:1fr}}
-</style></head><body><header class="intro"><h1>Wireframes — Sistema de Locadora</h1><p>Esboços de baixa fidelidade das telas previstas para o front-end Vértice.</p></header><main class="wrap">
-<section class="wire"><h2>01 · Visão geral</h2><p>Painel inicial com indicadores da frota, clientes, aluguéis ativos e receita registrada.</p><div class="bar"></div><div class="grid"><div class="tile">Veículos cadastrados<b>00</b></div><div class="tile">Clientes<b>00</b></div><div class="tile">Aluguéis ativos<b>00</b></div><div class="tile">Receita<b>R$ 0,00</b></div></div><div class="columns"><div class="block">Tabela: aluguéis recentes<br><br>Cliente | Veículo | Período | Situação</div><div class="block">Resumo da frota<br><br>Indicador e distribuição</div></div></section>
-<section class="wire"><h2>02 · Cadastros e listagem</h2><p>Modelo reutilizado para fabricantes, categorias, veículos, clientes e aluguéis.</p><div class="bar"></div><div class="filters"><span></span><span></span><span></span><span></span></div><div class="block">Tabela de registros<br><br>ID | Nome / dados | Relações | Ações<br><br>Linhas de resultados com editar, excluir e, para aluguéis ativos, devolver.</div><div class="actions"></div></section>
-<section class="wire"><h2>03 · Formulário de cadastro / edição</h2><p>Janela modal com campos dinâmicos de acordo com a entidade selecionada.</p><div class="modal"><b>Cadastro / edição</b><div class="fields" style="margin-top:16px"><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="actions"></div></div></section>
-<section class="wire"><h2>04 · Consultas e relatórios</h2><p>Área que executa as consultas personalizadas disponibilizadas pelos endpoints de filtros.</p><div class="grid"><div class="tile">Veículos por fabricante</div><div class="tile">Aluguéis por CPF</div><div class="tile">Fabricantes com veículos</div><div class="tile">Total de aluguéis por cliente</div><div class="tile">Aluguéis por categoria</div></div><div class="block" style="margin-top:12px">Resultado da consulta em tabela</div></section>
-<p class="caption">Os wireframes são referências estruturais. A interface final foi implementada em HTML, CSS e JavaScript na pasta wwwroot.</p></main></body></html>
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Wireframes | Vértice</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: #eceff3;
+            color: #303846;
+            font: 14px Arial, sans-serif
+        }
+
+        .intro {
+            padding: 35px max(24px, calc((100% - 1100px)/2));
+            background: #202a39;
+            color: white
+        }
+
+        .intro h1 {
+            margin: 0 0 8px;
+            font-size: 26px
+        }
+
+        .intro p {
+            margin: 0;
+            color: #c2cbd7
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px
+        }
+
+        .wire {
+            background: #fff;
+            border: 1px solid #cbd1d9;
+            border-radius: 8px;
+            margin: 22px 0;
+            padding: 20px;
+            box-shadow: 0 4px 14px #2732440c
+        }
+
+        .wire h2 {
+            font-size: 17px;
+            margin: 0 0 5px
+        }
+
+        .wire>p {
+            color: #7d8794;
+            font-size: 12px;
+            margin: 0 0 17px
+        }
+
+        .bar {
+            height: 27px;
+            background: #e5e8ed;
+            border: 1px solid #d1d6de;
+            border-radius: 4px;
+            margin-bottom: 13px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px
+        }
+
+        .tile {
+            height: 70px;
+            background: #f1f3f6;
+            border: 1px solid #d7dce3;
+            border-radius: 5px;
+            padding: 12px;
+            color: #707b8b;
+            font-size: 11px
+        }
+
+        .tile b {
+            display: block;
+            color: #4e5968;
+            font-size: 18px;
+            margin-top: 7px
+        }
+
+        .columns {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 12px;
+            margin-top: 12px
+        }
+
+        .block {
+            min-height: 130px;
+            border: 1px solid #d4dae2;
+            background: repeating-linear-gradient(0deg, #fff, #fff 28px, #f0f2f5 29px);
+            border-radius: 5px;
+            padding: 12px;
+            color: #788392;
+            font-size: 11px
+        }
+
+        .filters {
+            display: flex;
+            gap: 8px;
+            margin: 10px 0
+        }
+
+        .filters span {
+            height: 30px;
+            flex: 1;
+            border: 1px solid #cfd5de;
+            background: #f8f9fa;
+            border-radius: 4px
+        }
+
+        .actions {
+            height: 35px;
+            width: 120px;
+            background: #d9dde3;
+            border-radius: 4px;
+            margin: 12px 0 0 auto
+        }
+
+        .modal {
+            max-width: 540px;
+            margin: 15px auto;
+            border: 1px solid #cdd3dc;
+            padding: 18px;
+            border-radius: 6px
+        }
+
+        .fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px
+        }
+
+        .fields span {
+            height: 36px;
+            border: 1px solid #d3d9e1;
+            background: #f8f9fa;
+            border-radius: 4px
+        }
+
+        .caption {
+            font-size: 10px;
+            color: #98a1ac;
+            margin-top: 8px
+        }
+
+        @media(max-width:650px) {
+            .grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .columns {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="intro">
+        <h1>Wireframes — Sistema de Locadora</h1>
+        <p>Esboços de baixa fidelidade das telas previstas para o front-end Vértice.</p>
+    </header>
+    <main class="wrap">
+        <section class="wire">
+            <h2>01 · Visão geral</h2>
+            <p>Painel inicial com indicadores da frota, clientes, aluguéis ativos e receita registrada.</p>
+            <div class="bar"></div>
+            <div class="grid">
+                <div class="tile">Veículos cadastrados<b>00</b></div>
+                <div class="tile">Clientes<b>00</b></div>
+                <div class="tile">Aluguéis ativos<b>00</b></div>
+                <div class="tile">Receita<b>R$ 0,00</b></div>
+            </div>
+            <div class="columns">
+                <div class="block">Tabela: aluguéis recentes<br><br>Cliente | Veículo | Período | Situação</div>
+                <div class="block">Resumo da frota<br><br>Indicador e distribuição</div>
+            </div>
+        </section>
+        <section class="wire">
+            <h2>02 · Cadastros e listagem</h2>
+            <p>Modelo reutilizado para fabricantes, categorias, veículos, clientes e aluguéis.</p>
+            <div class="bar"></div>
+            <div class="filters"><span></span><span></span><span></span><span></span></div>
+            <div class="block">Tabela de registros<br><br>ID | Nome / dados | Relações | Ações<br><br>Linhas de
+                resultados com editar, excluir e, para aluguéis ativos, devolver.</div>
+            <div class="actions"></div>
+        </section>
+        <section class="wire">
+            <h2>03 · Formulário de cadastro / edição</h2>
+            <p>Janela modal com campos dinâmicos de acordo com a entidade selecionada.</p>
+            <div class="modal"><b>Cadastro / edição</b>
+                <div class="fields" style="margin-top:16px">
+                    <span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="actions"></div>
+            </div>
+        </section>
+        <section class="wire">
+            <h2>04 · Consultas e relatórios</h2>
+            <p>Área que executa as consultas personalizadas disponibilizadas pelos endpoints de filtros.</p>
+            <div class="grid">
+                <div class="tile">Veículos por fabricante</div>
+                <div class="tile">Aluguéis por CPF</div>
+                <div class="tile">Fabricantes com veículos</div>
+                <div class="tile">Total de aluguéis por cliente</div>
+                <div class="tile">Aluguéis por categoria</div>
+            </div>
+            <div class="block" style="margin-top:12px">Resultado da consulta em tabela</div>
+        </section>
+        <p class="caption">Os wireframes são referências estruturais. A interface final foi implementada em HTML, CSS e
+            JavaScript na pasta wwwroot.</p>
+    </main>
+</body>
+
+</html>
