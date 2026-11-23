@@ -1,4 +1,4 @@
-# Vértice — Sistema de Gestão de Locadora
+# Sistema de Gestão de Locadora
 
 Aplicação web para gerenciamento de uma locadora de veículos, desenvolvida como segunda etapa do trabalho. O front-end foi integrado à API ASP.NET Core e ao banco SQL Server da primeira etapa.
 
@@ -112,16 +112,9 @@ O front-end é servido pela própria aplicação ASP.NET Core, na pasta `wwwroot
 
 Os filtros simples das listagens combinam os dados retornados pelos endpoints GET. A área **Consultas e relatórios** executa diretamente as rotas de consultas personalizadas já implementadas no back-end.
 
-## 6. Wireframes e relatório
+## 6. Wireframes
 
-Os wireframes de baixa fidelidade estão em `LocadoraApi/wwwroot/wireframes.html` e podem ser visualizados pelo endereço `http://localhost:5000/wireframes.html` com a API em execução. Para gerar um link público compartilhável, publique o repositório no GitHub e use o link direto para o arquivo, ou importe/recrie os quadros em uma ferramenta como Figma e inclua o link público no relatório.
+Os wireframes e protótipos das interfaces do sistema foram
+desenvolvidos no Figma.
 
-O arquivo `docs/relatorio.tex` é um modelo inicial do relatório em LaTeX. Complete os dados acadêmicos solicitados pela disciplina e acrescente os links definitivos do repositório, wireframes e vídeo antes da entrega.
-
-## 7. Observações para avaliação
-
-- O projeto precisa estar conectado ao SQL Server; não utiliza uma lista estática de produtos/dados como substituto do back-end.
-- A pasta `bin` e a pasta `obj` não precisam ser enviadas. Elas são recriadas pelo .NET durante a compilação.
-- Os dados de demonstração são fictícios e servem para facilitar a visualização das telas e consultas.
-- Se uma exclusão for impedida por relacionamentos existentes, a API poderá retornar conflito; nesse caso, remova ou altere primeiro os registros dependentes.
-- Faça commits frequentes no repositório GitHub, mantendo o histórico de evolução do front-end e da integração.
+**Link:** [Wireframes](https://www.figma.com/make/j5QftyS0B4UnVa39n6uhNr/Wireframes-para-Locadora-de-Ve%C3%ADculos?p=f&t=teGK1wRKfAhTtPXl-0&fullscreen=1)
