@@ -1,311 +1,127 @@
-# TP_LocadoraDeVeiculos
+# Vértice — Sistema de Gestão de Locadora
 
-API para gerenciamento de uma **locadora de veículos**, desenvolvida em **ASP.NET Core** com **Entity Framework Core** e **SQL Server Express**.
+Aplicação web para gerenciamento de uma locadora de veículos, desenvolvida como segunda etapa do trabalho. O front-end foi integrado à API ASP.NET Core e ao banco SQL Server da primeira etapa.
 
-Trabalho referente à disciplina de **Tecnologias para Análise e Desenvolvimento de Sistemas** — **4º Período de Análise e Desenvolvimento de Sistemas**.
+## Funcionalidades implementadas
 
----
+- Painel inicial com total de veículos, clientes, aluguéis ativos e receita registrada.
+- Cadastro, consulta, edição e exclusão de **Fabricantes, Categorias, Veículos, Clientes e Aluguéis**.
+- Filtros combináveis por pelo menos dois campos em cada entidade.
+- Seleção de fabricante/categoria no cadastro de veículos e de cliente/veículo no cadastro de aluguel.
+- Registro de devolução de veículo com quilometragem final.
+- Consultas personalizadas que consomem os endpoints de `FiltrosController`.
+- Interface responsiva em HTML, CSS e JavaScript, sem dados mocados nas telas: as informações são obtidas da API.
+- Wireframes de baixa fidelidade em `LocadoraApi/wwwroot/wireframes.html`.
 
-## Autor
+## Tecnologias
 
-- **Nome:** Guilherme Cândido Vidulino
-- **Matrícula:** 896587
-- **Código de pessoa:** 1600386
+- HTML5, CSS3 e JavaScript (Fetch API)
+- ASP.NET Core Web API / .NET 9
+- Entity Framework Core 9
+- SQL Server Express
 
----
+## Estrutura relevante
 
-## 🎥 Vídeo de Apresentação
-
-[![Assista ao vídeo de apresentação](https://i9.ytimg.com/vi/vJKe6r89Mvw/mqdefault.jpg?sqp=CNiVsdYG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYACsAWKAgwIABABGGYgZihmMA8=&rs=AOn4CLBYVzEnrrZEhgmOE3bf8ZQUZvID9Q)](https://youtu.be/vJKe6r89Mvw?si=nFDBXODSf8FObqT8))
-
----
-
-## Tecnologias utilizadas
-
-| Tecnologia | Versão |
-|-----------|--------|
-| .NET | 8.0 |
-| ASP.NET Core Web API | 8.0 |
-| Entity Framework Core | 8.0 |
-| SQL Server Express | 2022 |
-| Swashbuckle (Swagger) | 6.5.0 |
-
----
-
-## Entidades do sistema
-
-O sistema possui **5 entidades**:
-
-| Entidade | Descrição |
-|----------|-----------|
-| **Fabricante** | Marca dos veículos (Toyota, Volkswagen, etc.) |
-| **Categoria** | Classificação do veículo (Hatch, Sedan, SUV) |
-| **Veículo** | Veículo da frota, vinculado a um fabricante e uma categoria |
-| **Cliente** | Cliente que aluga o veículo |
-| **Aluguel** | Registro de locação, vinculando cliente + veículo em um período |
-
----
-
-## Como rodar o projeto
-
-### Pré-requisitos
-
-- [.NET SDK 8.0+](https://dotnet.microsoft.com/download/dotnet/8.0)
-- [SQL Server Express](https://www.microsoft.com/sql-server/sql-server-downloads)
-- [Ferramenta `dotnet-ef`](https://learn.microsoft.com/ef/core/cli/dotnet)
-- [Visual Studio Code](https://code.visualstudio.com/) (opcional)
-- [SQL Server Management Studio](https://learn.microsoft.com/sql/ssms/) (opcional, para visualizar o banco)
-
-### 1. Instalar a ferramenta do EF Core (uma vez só)
-
-```bash
-dotnet tool install --global dotnet-ef
+```text
+TP_LocadoraDeVeiculos/
+├── LocadoraApi/
+│   ├── Controllers/
+│   ├── Data/
+│   ├── DTOs/
+│   ├── Migrations/
+│   ├── Models/
+│   ├── wwwroot/
+│   │   ├── index.html
+│   │   ├── wireframes.html
+│   │   └── assets/
+│   │       ├── app.js
+│   │       └── styles.css
+│   ├── appsettings.json
+│   ├── Program.cs
+│   └── LocadoraApi.csproj
+├── dados-exemplo.sql
+├── docs/
+│   └── relatorio.tex
+└── README.md
 ```
 
-> Se já tiver instalada e quiser atualizar:
-> ```bash
-> dotnet tool update --global dotnet-ef
-> ```
+## Pré-requisitos
 
-### 2. Clonar o repositório
+- .NET SDK 9.0 (o arquivo `.csproj` desta versão da API utiliza `net9.0`).
+- SQL Server (Express ou outra edição compatível).
+- SQL Server Management Studio (opcional, recomendado para administrar o banco).
 
-```bash
-git clone https://github.com/[SEU-USUARIO]/[NOME-REPO].git
-cd [NOME-REPO]/LocadoraApi
-```
+## 1. Configurar a conexão com o SQL Server
 
-### 3. Configurar a connection string
-
-Abra o arquivo `appsettings.json` e ajuste o **nome do seu servidor SQL Server Express**:
+Abra `LocadoraApi/appsettings.json` e ajuste a connection string para a instância disponível no computador. Exemplo para uma instância SQL Server Express com autenticação do Windows:
 
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=SEU-PC\\SQLEXPRESS;Database=LocadoraDb;Trusted_Connection=True;TrustServerCertificate=True;"
+    "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=LocadoraDb;Trusted_Connection=True;TrustServerCertificate=True;"
   }
 }
 ```
 
-> **Importante:** troque `SEU-PC` pelo nome da sua máquina.  
-> No SSMS, geralmente é algo como `DESKTOP-XXXXX\SQLEXPRESS`.
+Se a instância for padrão, use `Server=localhost` (sem `\\SQLEXPRESS`). Se o nome do servidor ou da instância for diferente, substitua pelo endereço correto. A connection string que veio no projeto original apontava para a máquina de desenvolvimento; por isso, ela deve ser adaptada no computador de execução.
 
-### 4. Restaurar dependências
+## 2. Criar o banco e aplicar as migrations
+
+Abra um terminal na pasta `LocadoraApi` e execute:
 
 ```bash
 dotnet restore
-```
-
-### 5. Aplicar as migrations (cria o banco de dados)
-
-```bash
+dotnet tool install --global dotnet-ef
 dotnet ef database update
 ```
 
-Isso vai criar automaticamente o banco `LocadoraDb` com as 5 tabelas + tabela de histórico do EF.
+O Entity Framework Core cria o banco `LocadoraDb` e as tabelas a partir das migrations existentes no projeto.
 
-### 6. Rodar a API
+## 3. Inserir dados fictícios para demonstração
+
+Depois de aplicar as migrations, abra `dados-exemplo.sql` no SSMS e execute o script. Ele insere exemplos de fabricantes, categorias, clientes, veículos e um aluguel histórico. Os registros são fictícios e o script verifica a existência de alguns dados para evitar duplicações.
+
+A aplicação também pode ser utilizada com o banco vazio, cadastrando os registros pela interface. Para cadastrar um veículo, primeiro cadastre ao menos um fabricante e uma categoria. Para cadastrar um aluguel, primeiro cadastre um cliente e um veículo.
+
+## 4. Executar a aplicação
+
+Na pasta `LocadoraApi`, execute:
 
 ```bash
 dotnet run
 ```
 
-A API vai subir em:
+A configuração de desenvolvimento do projeto utiliza `http://localhost:5000`. Abra no navegador:
 
-```
-http://localhost:5000
-```
+- **Sistema:** http://localhost:5000
+- **Swagger:** http://localhost:5000/swagger
+- **Wireframes:** http://localhost:5000/wireframes.html
 
-### 7. Abrir o Swagger
+O front-end é servido pela própria aplicação ASP.NET Core, na pasta `wwwroot`. Assim, as chamadas `fetch()` usam a mesma origem da API e não exigem configuração adicional de CORS.
 
-No navegador:
+## 5. Rotas da API consumidas pelo front-end
 
-```
-http://localhost:5000/swagger
-```
+| Entidade / consulta | Rotas |
+|---|---|
+| Fabricantes | `GET/POST /api/fabricantes`, `GET/PUT/DELETE /api/fabricantes/{id}` |
+| Categorias | `GET/POST /api/categorias`, `GET/PUT/DELETE /api/categorias/{id}` |
+| Veículos | `GET/POST /api/veiculos`, `GET/PUT/DELETE /api/veiculos/{id}` |
+| Clientes | `GET/POST /api/clientes`, `GET/PUT/DELETE /api/clientes/{id}` |
+| Aluguéis | `GET/POST /api/alugueis`, `PUT/DELETE /api/alugueis/{id}`, `PATCH /api/alugueis/{id}/devolver` |
+| Consultas | `GET /api/filtros/veiculos-por-fabricante/{nome}`; `GET /api/filtros/alugueis-por-cliente/{cpf}`; `GET /api/filtros/fabricantes-com-veiculos`; `GET /api/filtros/clientes-com-total-alugueis`; `GET /api/filtros/alugueis-por-categoria/{categoriaId}` |
 
-## Como testar
+Os filtros simples das listagens combinam os dados retornados pelos endpoints GET. A área **Consultas e relatórios** executa diretamente as rotas de consultas personalizadas já implementadas no back-end.
 
-**OBS:** Os exemplos de testes abaixo foram os mesmos realizados durante a confecção do projeto.
+## 6. Wireframes e relatório
 
-### 1. Cadastrar fabricantes
+Os wireframes de baixa fidelidade estão em `LocadoraApi/wwwroot/wireframes.html` e podem ser visualizados pelo endereço `http://localhost:5000/wireframes.html` com a API em execução. Para gerar um link público compartilhável, publique o repositório no GitHub e use o link direto para o arquivo, ou importe/recrie os quadros em uma ferramenta como Figma e inclua o link público no relatório.
 
-`POST /api/fabricantes`
+O arquivo `docs/relatorio.tex` é um modelo inicial do relatório em LaTeX. Complete os dados acadêmicos solicitados pela disciplina e acrescente os links definitivos do repositório, wireframes e vídeo antes da entrega.
 
-```json
-{ "nome": "Toyota", "paisOrigem": "Japão", "anoFundacao": 1937 }
-```
+## 7. Observações para avaliação
 
-```json
-{ "nome": "Volkswagen", "paisOrigem": "Alemanha", "anoFundacao": 1937 }
-```
-
-```json
-{ "nome": "Chevrolet", "paisOrigem": "EUA", "anoFundacao": 1911 }
-```
-
-### 2. Cadastrar categorias
-
-`POST /api/categorias`
-
-```json
-{ "nome": "Hatch", "descricao": "Compactos", "valorDiariaBase": 90.00 }
-```
-
-```json
-{ "nome": "Sedan", "descricao": "Sedans médios", "valorDiariaBase": 140.00 }
-```
-
-```json
-{ "nome": "SUV", "descricao": "Utilitários esportivos", "valorDiariaBase": 200.00 }
-```
-
-### 3. Cadastrar veículos
-
-`POST /api/veiculos`
-
-```json
-{
-  "modelo": "Corolla",
-  "anoFabricacao": 2022,
-  "quilometragem": 15000,
-  "placa": "ABC1234",
-  "fabricanteId": 1,
-  "categoriaId": 2
-}
-```
-
-```json
-{
-  "modelo": "Gol",
-  "anoFabricacao": 2021,
-  "quilometragem": 30000,
-  "placa": "DEF5678",
-  "fabricanteId": 2,
-  "categoriaId": 1
-}
-```
-
-> Ajuste `fabricanteId` e `categoriaId` conforme os IDs gerados.
-
-### 4. Cadastrar clientes
-
-`POST /api/clientes`
-
-```json
-{ "nome": "João Silva", "cpf": "12345678900", "email": "joao@email.com", "telefone": "11999999999" }
-```
-
-```json
-{ "nome": "Maria Souza", "cpf": "98765432100", "email": "maria@email.com", "telefone": "11988888888" }
-```
-
-### 5. Criar um aluguel
-
-`POST /api/alugueis`
-
-```json
-{
-  "clienteId": 1,
-  "veiculoId": 1,
-  "dataRetirada": "2026-09-26T10:00:00",
-  "dataDevolucaoPrevista": "2026-09-30T10:00:00",
-  "valorDiaria": 140.00
-}
-```
-
-### 6. Devolver o veículo
-
-`PATCH /api/alugueis/1/devolver?quilometragemFinal=15500`
-
-### 7. Testar os filtros
-
-```
-GET /api/filtros/veiculos-por-fabricante/Toyota
-GET /api/filtros/alugueis-por-cliente/12345678900
-GET /api/filtros/fabricantes-com-veiculos
-GET /api/filtros/clientes-com-total-alugueis
-GET /api/filtros/alugueis-por-categoria/2
-```
-
----
-
-## Estrutura do projeto
-
-```
-LocadoraApi/
-├── Controllers/           
-│   ├── FabricantesController.cs
-│   ├── CategoriasController.cs
-│   ├── VeiculosController.cs
-│   ├── ClientesController.cs
-│   ├── AlugueisController.cs
-│   └── FiltrosController.cs
-│
-├── Models/                 
-│   ├── Fabricante.cs
-│   ├── Categoria.cs
-│   ├── Veiculo.cs
-│   ├── Cliente.cs
-│   └── Aluguel.cs
-│
-├── DTOs/                  
-│   ├── AluguelCreateDto.cs
-│   ├── ClienteCreateDto.cs
-│   └── DevolucaoDto.cs
-│
-├── Data/                  
-│   └── ApplicationContext.cs
-│
-├── Middleware/            
-│   └── ExceptionMiddleware.cs
-│
-├── Migrations/            
-│
-├── Properties/
-│   └── launchSettings.json
-│
-├── Program.cs
-├── appsettings.json
-└── LocadoraApi.csproj
-```
-
----
-
-## Exemplos de teste no SSMS
-
-Para conferir os dados no banco:
-
-```sql
-USE LocadoraDb;
-
-SELECT * FROM Fabricantes;
-SELECT * FROM Categorias;
-SELECT * FROM Veiculos;
-SELECT * FROM Clientes;
-SELECT * FROM Alugueis;
-```
-
-Ou uma consulta com JOIN para ver aluguéis completos:
-
-```sql
-SELECT 
-    a.Id AS AluguelId,
-    c.Nome AS Cliente,
-    v.Modelo AS Veiculo,
-    v.Placa,
-    a.DataRetirada,
-    a.DataDevolucaoPrevista,
-    a.DataDevolucaoReal,
-    a.ValorTotal
-FROM Alugueis a
-INNER JOIN Clientes c ON a.ClienteId = c.Id
-INNER JOIN Veiculos v ON a.VeiculoId = v.Id;
-```
-
----
-
-## Repositório
-
-- **GitHub:** (https://github.com/Guibr905/TP_LocadoraDeVeiculos.git)
-
----
+- O projeto precisa estar conectado ao SQL Server; não utiliza uma lista estática de produtos/dados como substituto do back-end.
+- A pasta `bin` e a pasta `obj` não precisam ser enviadas. Elas são recriadas pelo .NET durante a compilação.
+- Os dados de demonstração são fictícios e servem para facilitar a visualização das telas e consultas.
+- Se uma exclusão for impedida por relacionamentos existentes, a API poderá retornar conflito; nesse caso, remova ou altere primeiro os registros dependentes.
+- Faça commits frequentes no repositório GitHub, mantendo o histórico de evolução do front-end e da integração.

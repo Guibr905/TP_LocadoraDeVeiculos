@@ -1,4 +1,4 @@
-﻿using LocadoraApi.Data;
+using LocadoraApi.Data;
 using LocadoraApi.Middleware;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +18,8 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
 app.UseMiddleware<ExceptionMiddleware>();
 
 if (app.Environment.IsDevelopment())

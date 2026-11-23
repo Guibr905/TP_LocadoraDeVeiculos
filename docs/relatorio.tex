@@ -1,0 +1,44 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\geometry{margin=2.5cm}
+\title{Sistema de Gestão de Locadora de Veículos\\\large Segunda etapa: integração do front-end com a API}
+\author{Guilherme Cândido Vidulino}
+\date{\today}
+\begin{document}
+\maketitle
+
+\section{Problema}
+O projeto aborda a necessidade de uma locadora de veículos gerenciar, em um único sistema, os dados de fabricantes, categorias, veículos, clientes e aluguéis. A solução deve permitir manter os cadastros, acompanhar os contratos de locação e consultar informações consolidadas para apoiar a operação da empresa.
+
+\section{Modelagem adotada}
+A aplicação utiliza cinco entidades principais: Fabricante, Categoria, Veículo, Cliente e Aluguel. Um veículo está associado a um fabricante e a uma categoria. Um aluguel relaciona um cliente e um veículo, registrando datas de retirada e devolução, quilometragem e valores. A API foi implementada em ASP.NET Core com Entity Framework Core e SQL Server.
+
+\section{Artefatos desenvolvidos nesta etapa}
+Foi desenvolvido um front-end responsivo com HTML, CSS e JavaScript, integrado à API por meio de chamadas \texttt{fetch()}. A interface contém:
+\begin{itemize}[noitemsep]
+  \item painel com indicadores de veículos, clientes, aluguéis ativos e valores registrados;
+  \item telas de consulta, cadastro, edição e exclusão para fabricantes, categorias, veículos, clientes e aluguéis;
+  \item filtros combináveis nas listagens, utilizando campos específicos de cada entidade;
+  \item formulário de registro de devolução com quilometragem final;
+  \item área de consultas e relatórios que consome as rotas personalizadas do controlador de filtros;
+  \item wireframes de baixa fidelidade disponibilizados no arquivo \texttt{LocadoraApi/wwwroot/wireframes.html}.
+\end{itemize}
+
+\section{Consultas e integração}
+Como exemplos de consultas integradas, a interface permite consultar veículos por fabricante, utilizando \texttt{GET /api/filtros/veiculos-por-fabricante/\{nome\}}, e consultar o histórico de aluguéis por CPF, utilizando \texttt{GET /api/filtros/alugueis-por-cliente/\{cpf\}}. Os resultados são apresentados em tabelas no próprio front-end. Também estão disponíveis consultas de fabricantes com veículos, total de aluguéis por cliente e aluguéis por categoria.
+
+\section{Acesso aos artefatos}
+\begin{itemize}
+  \item Repositório GitHub: \url{INSERIR_LINK_DO_REPOSITORIO}
+  \item Wireframes: \url{https://www.figma.com/make/j5QftyS0B4UnVa39n6uhNr/Wireframes-para-Locadora-de-Ve%C3%ADculos?p=f&t=ioPKGg4XQ17UFguA-0&fullscreen=1}
+  \item Vídeo de apresentação: \url{INSERIR_LINK_DO_VIDEO_OU_INFORMAR_SUBMISSAO_NO_CANVAS}
+\end{itemize}
+
+\noindent Os arquivos-fonte, a API, os wireframes e o script de dados fictícios acompanham o arquivo ZIP da entrega.
+
+\end{document}
