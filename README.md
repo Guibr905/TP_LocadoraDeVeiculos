@@ -118,3 +118,9 @@ Os wireframes e protótipos das interfaces do sistema foram
 desenvolvidos no Figma.
 
 **Link:** [Wireframes](https://www.figma.com/make/j5QftyS0B4UnVa39n6uhNr/Wireframes-para-Locadora-de-Ve%C3%ADculos?p=f&t=teGK1wRKfAhTtPXl-0&fullscreen=1)
+
+## 7. Vídeo
+
+Segue abaixo o link do vídeo explicativo do front end desenvolvido no trabalho prático 2.
+
+
