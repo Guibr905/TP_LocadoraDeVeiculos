@@ -123,4 +123,4 @@ desenvolvidos no Figma.
 
 Segue abaixo o link do vídeo explicativo do front end desenvolvido no trabalho prático 2.
 
-
+[![Vídeo](./Images/capaVideo.jpg)](https://youtu.be/_tEw2mbyuw0?si=-VYzCcZa7L2PcghN)
